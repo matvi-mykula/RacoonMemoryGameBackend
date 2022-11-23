@@ -2,7 +2,8 @@ const express = require('express');
 var cors = require('cors');
 
 const app = express();
-const port = 3005;
+// const port = 3005; // this worked on my home computer
+const port = 8080; //this should work on fly => vercel
 app.use(cors());
 app.use(express.json());
 
