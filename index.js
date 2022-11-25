@@ -3,7 +3,7 @@ var cors = require('cors');
 
 const app = express();
 // const port = 3005; // this worked on my home computer
-const port = 8080; //this should work on fly => vercel
+const port = process.env.PORT || 8080; //this should work on fly => vercel
 app.use(cors());
 app.use(express.json());
 
@@ -50,5 +50,5 @@ app.get('/api/scorelist', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Example app listening on port ${port} i hope`);
 });
