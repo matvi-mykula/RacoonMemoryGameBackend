@@ -3,7 +3,7 @@ var cors = require('cors');
 
 const app = express();
 // const port = 3005; // this worked on my home computer
-const port = process.env.PORT || 8080; //this should work on fly => vercel
+const port = 3005; //this should work on fly => vercel
 app.use(cors());
 app.use(express.json());
 
@@ -37,12 +37,12 @@ app.post('/api/highscores', (req, res) => {
   });
   console.log('score saved');
   //   getHighScores();
-  res.json({ message: 'success' });
+  res.json({ message: req.body });
 });
 
 app.get('/api/scorelist', async (req, res) => {
   return Score.find()
-    .sort({ score: -1 })
+    .sort({ score: -1, time: 1 })
     .limit(10)
     .exec(function (err, entries) {
       console.log(entries);
