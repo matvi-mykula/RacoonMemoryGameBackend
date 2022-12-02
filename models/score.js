@@ -7,6 +7,7 @@ const HighScoreSchema = new Schema({
   //   date: { type: Date },
   score: { type: Number },
   time: { type: Number },
+  date: { type: Date },
 });
 
 //can create a virtual for date_formatted and for url

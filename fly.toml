@@ -1,6 +1,6 @@
-# fly.toml file generated for racoon-memory-backend-fly on 2022-11-25T20:33:53-08:00
+# fly.toml file generated for racoon-memory-game-backend on 2022-12-02T10:17:03-08:00
 
-app = "racoon-memory-backend-fly"
+app = "racoon-memory-game-backend"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
@@ -9,7 +9,7 @@ processes = []
   builder = "heroku/buildpacks:20"
 
 [env]
-  PORT = "3000"
+  PORT = "8080"
 
 [experimental]
   allowed_public_ports = []
