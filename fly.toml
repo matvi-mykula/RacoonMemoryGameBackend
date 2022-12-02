@@ -1,6 +1,6 @@
-# fly.toml file generated for racoon-memory-game-backend on 2022-12-02T10:17:03-08:00
+# fly.toml file generated for racoon-memory-backend-fly on 2022-12-02T10:53:09-08:00
 
-app = "racoon-memory-game-backend"
+app = "racoon-memory-backend-fly"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
