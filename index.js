@@ -29,6 +29,7 @@ app.post('/api/highscores', (req, res) => {
     score: req.body.aScore,
     name: req.body.aName,
     time: req.body.aTime,
+    date: req.body.aDate,
   });
   score.save((err) => {
     if (err) {
