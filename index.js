@@ -51,6 +51,15 @@ app.get('/api/scorelist', async (req, res) => {
     });
 });
 
+// get scores and date
+app.get('/api/statistics', async (req, res) => {
+  return Score.find()
+    .sort({ score: -1 })
+    .exec(function (err, entries) {
+      return res.end(JSON.stringify(entries));
+    });
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port} i think`);
 });
