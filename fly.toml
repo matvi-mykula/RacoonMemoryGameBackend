@@ -2,7 +2,7 @@
 
 app = "purple-firefly-886"
 kill_signal = "SIGINT"
-kill_timeout = 5
+kill_timeout = 10
 processes = []
 
 [build]

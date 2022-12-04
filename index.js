@@ -30,18 +30,20 @@ app.post('/api/highscores', (req, res) => {
     name: req.body.aName,
     time: req.body.aTime,
     date: req.body.aDate,
+    userIP: req.body.userIP,
   });
   score.save((err) => {
     if (err) {
       console.log(err);
     }
   });
-  console.log('score saved');
   //   getHighScores();
   res.json({ message: req.body });
+  console.log('score saved');
 });
 
 app.get('/api/scorelist', async (req, res) => {
+  console.log('top ten');
   return Score.find()
     .sort({ score: -1, time: 1 })
     .limit(10)
@@ -53,6 +55,7 @@ app.get('/api/scorelist', async (req, res) => {
 
 // get scores and date
 app.get('/api/statistics', async (req, res) => {
+  console.log('stats');
   return Score.find()
     .sort({ score: -1 })
     .exec(function (err, entries) {
@@ -61,5 +64,5 @@ app.get('/api/statistics', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port} i think`);
+  console.log(`Memory app listening on port ${port} i think`);
 });
